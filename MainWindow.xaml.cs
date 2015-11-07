@@ -60,6 +60,7 @@ namespace gw2_launcher
 
             List<System.Diagnostics.Process> processes = new List<System.Diagnostics.Process>();
             processes.AddRange(CustomApi.getProcesses("gw2"));
+            processes.AddRange(CustomApi.getProcesses("gw2-64"));
             processes.AddRange(CustomApi.getProcesses("gw"));
 
             if (processes.Count == 0)
@@ -81,7 +82,7 @@ namespace gw2_launcher
                 ok = ok || oktmp;
             }
 
-            if (Options.jeu.Equals("gw2") || Options.jeu.Equals("gw"))
+            if (Options.jeu.Equals("gw2") || Options.jeu.Equals("gw2-64") || Options.jeu.Equals("gw"))
             {
                 ProcessStartInfo startInfo = new ProcessStartInfo();
                 startInfo.WorkingDirectory = Options.chemin;
